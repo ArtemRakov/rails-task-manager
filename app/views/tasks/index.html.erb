@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="container-info">
+    <h1> All my tasks </h1>
+    <div class="content">
+      <% @tasks.each do |task| %>
+        <h3><%= link_to task.name, task_path(task) %> <%= task.complete ? '[X]' : '[ ]' %> </h3>
+      <% end %>
+    </div>
+
+    <%= link_to "Create new task", new_task_path, class: "button button-primary" %>
+  </div>
+</div>
